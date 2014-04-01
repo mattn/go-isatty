@@ -4,7 +4,7 @@ isatty for golang
 
 ## Usage
 
-```golang
+```go
 package main
 
 import (
