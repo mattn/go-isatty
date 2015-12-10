@@ -1,4 +1,5 @@
 // +build solaris
+// +build !appengine
 
 package isatty
 
