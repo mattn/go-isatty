@@ -36,6 +36,35 @@ func IsTerminal(fd uintptr) bool {
 	return r != 0 && e == 0
 }
 
+func isCygwinPipeName(name string) bool {
+	token := strings.Split(name, "-")
+	if len(token) < 5 {
+		return false
+	}
+
+	if token[0] != `\msys` && token[0] != `\cygwin` {
+		return false
+	}
+
+	if token[1] == "" {
+		return false
+	}
+
+	if !strings.HasPrefix(token[2], "pty") {
+		return false
+	}
+
+	if token[3] != `from` && token[3] != `to` {
+		return false
+	}
+
+	if token[4] != "master" {
+		return false
+	}
+
+	return true
+}
+
 // IsCygwinTerminal() return true if the file descriptor is a cygwin or msys2
 // terminal. This is also always false on this environment.
 func IsCygwinTerminal(fd uintptr) bool {
@@ -58,14 +87,5 @@ func IsCygwinTerminal(fd uintptr) bool {
 	}
 
 	l := *(*uint32)(unsafe.Pointer(&buf))
-	name := string(utf16.Decode(buf[2 : 2+l/2]))
-	if !strings.HasPrefix(name, `\msys-`) && !strings.HasPrefix(name, `\cygwin-`) {
-		return false
-	}
-
-	token := strings.Split(name, "-")
-	if len(token) < 3 || !strings.HasPrefix(token[2], "pty") {
-		return false
-	}
-	return true
+	return isCygwinPipeName(string(utf16.Decode(buf[2 : 2+l/2])))
 }
