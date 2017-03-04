@@ -1,9 +1,6 @@
 # go-isatty
 
-[![Godoc Reference][godoc-img]][godoc]
-[![Build Status][ci-img]][ci]
-[![Coverage][coveralls-img]][coveralls]
-[![Go Report Card][goreportcard-img]][goreportcard]
+[![Godoc Reference][godoc-img]][godoc] [![Build Status][ci-img]][ci] [![Coverage][coveralls-img]][coveralls] [![Go Report Card][goreportcard-img]][goreportcard]
 
 isatty for golang
 
