@@ -1,4 +1,4 @@
-package main
+package isatty_test
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/mattn/go-isatty"
 )
 
-func main() {
+func Example() {
 	if isatty.IsTerminal(os.Stdout.Fd()) {
 		fmt.Println("Is Terminal")
 	} else if isatty.IsCygwinTerminal(os.Stdout.Fd()) {
