@@ -1,5 +1,6 @@
 // +build !windows
 // +build !appengine
+// +build !ppc64
 // +build !ppc64le
 
 package isatty
