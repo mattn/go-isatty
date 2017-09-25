@@ -1,4 +1,4 @@
-// +build linux,ppc64
+// +build linux,ppc64le
 
 package isatty
 
