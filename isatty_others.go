@@ -1,4 +1,3 @@
-// +build darwin
 // +build !windows
 // +build !appengine
 
