@@ -1,4 +1,6 @@
-// +build darwin !windows !appengine
+// +build darwin
+// +build !windows
+// +build !appengine
 
 package isatty
 
