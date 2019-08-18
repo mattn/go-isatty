@@ -24,8 +24,8 @@ func TestCygwinPipeName(t *testing.T) {
 		{`\msys-e022582115c10879-pty4-to-master`, true},
 		{`\cygwin-e022582115c10879-pty4-to-master`, true},
 		{`\Device\NamedPipe\cygwin-e022582115c10879-pty4-from-master`, true},
-		{`Device\NamedPipe\msys-e022582115c10879-pty4-to-master`, true},
-		{`Device\NamedPipe\cygwin-e022582115c10879-pty4-to-master`, true},
+		{`\Device\NamedPipe\msys-e022582115c10879-pty4-to-master`, true},
+		{`Device\NamedPipe\cygwin-e022582115c10879-pty4-to-master`, false},
 	}
 
 	for _, test := range tests {

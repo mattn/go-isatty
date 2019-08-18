@@ -19,7 +19,7 @@ const (
 
 var (
 	kernel32                         = syscall.NewLazyDLL("kernel32.dll")
-	ntdll                            = syscall.NewLazyDLL("Ntdll.dll")
+	ntdll                            = syscall.NewLazyDLL("ntdll.dll")
 	procGetConsoleMode               = kernel32.NewProc("GetConsoleMode")
 	procGetFileInformationByHandleEx = kernel32.NewProc("GetFileInformationByHandleEx")
 	procGetFileType                  = kernel32.NewProc("GetFileType")
