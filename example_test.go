@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mysqto/isatty"
+	"github.com/mattn/go-isatty"
 )
 
 func Example() {

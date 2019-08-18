@@ -4,7 +4,7 @@
 package isatty
 
 import (
-	"fmt"
+	"errors"
 	"strings"
 	"syscall"
 	"unicode/utf16"
@@ -13,7 +13,7 @@ import (
 
 const (
 	objectNameInfo uintptr = 1
-	fileNameInfo   uintptr = 2
+	fileNameInfo           = 2
 	fileTypePipe           = 3
 )
 
@@ -68,7 +68,7 @@ func isCygwinPipeName(name string) bool {
 		return false
 	}
 
-	if token[4] != `master` {
+	if token[4] != "master" {
 		return false
 	}
 
@@ -82,7 +82,7 @@ func isCygwinPipeName(name string) bool {
 // see https://stackoverflow.com/a/18792477 for details
 func getFileNameByHandle(fd uintptr) (string, error) {
 	if procNtQueryObject == nil {
-		return "", fmt.Errorf("ntdll.dll: NtQueryObject not supported")
+		return "", errors.New("ntdll.dll: NtQueryObject not supported")
 	}
 
 	var buf [4 + syscall.MAX_PATH]uint16
