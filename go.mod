@@ -1,5 +1,8 @@
-module github.com/mattn/go-isatty
+module github.com/matt-FFFFFF/go-isatty
 
-go 1.15
+go 1.24
 
-require golang.org/x/sys v0.6.0
+require (
+	github.com/mattn/go-isatty v0.0.20
+	golang.org/x/sys v0.33.0
+)
