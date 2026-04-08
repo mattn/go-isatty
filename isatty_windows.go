@@ -31,6 +31,10 @@ func init() {
 	if procGetFileInformationByHandleEx.Find() != nil {
 		procGetFileInformationByHandleEx = nil
 	}
+	// Check if NtQueryObject is available.
+	if procNtQueryObject.Find() != nil {
+		procNtQueryObject = nil
+	}
 }
 
 // IsTerminal return true if the file descriptor is terminal.
