@@ -20,7 +20,7 @@ func TestCygwinPipeName(t *testing.T) {
 		{`\cygwin-x-pty2-from-toaster`, false},
 		{`\cygwin--pty2-from-master`, false},
 		{`\\cygwin-x-pty2-from-master`, false},
-		{`\cygwin-x-pty2-from-master-`, true}, // for the feature
+		{`\cygwin-x-pty2-from-master-`, false},
 		{`\cygwin-e022582115c10879-pty4-from-master`, true},
 		{`\msys-e022582115c10879-pty4-to-master`, true},
 		{`\cygwin-e022582115c10879-pty4-to-master`, true},

@@ -45,7 +45,7 @@ func IsTerminal(fd uintptr) bool {
 //   \{cygwin,msys}-XXXXXXXXXXXXXXXX-ptyN-{from,to}-master
 func isCygwinPipeName(name string) bool {
 	token := strings.Split(name, "-")
-	if len(token) < 5 {
+	if len(token) != 5 {
 		return false
 	}
 
