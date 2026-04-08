@@ -14,21 +14,20 @@ jobs:
           - macos-latest
           - windows-latest
         go:
-          - '1.20'
-          - '1.19'
-          - '1.18'
-          - '1.17'
+          - '1.23'
+          - '1.22'
+          - '1.21'
     steps:
-      - uses: actions/setup-go@v2
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go }}
-      - uses: actions/checkout@v2
       - name: test
         shell: bash
         run: |
           ./go.test.sh
       - name: upload coverage report
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v6
         with:
           env_vars: OS,GO
         env:
