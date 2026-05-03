@@ -10,7 +10,7 @@ import (
 
 func TestTerminal(t *testing.T) {
 	// test for non-panic
-	IsTerminal(os.Stdout.Fd())
+	t.Log("os.Stdout:", IsTerminal(os.Stdout.Fd()))
 }
 
 func TestCygwinPipeName(t *testing.T) {
