@@ -9,10 +9,10 @@ import (
 
 func TestIsWriterTerminal(t *testing.T) {
 	// test for non-panic
-	isatty.IsWriterTerminal(os.Stdout)
+	t.Log("os.Stdout:", isatty.IsWriterTerminal(os.Stdout))
 }
 
 func TestIsWriterCygwinTerminal(t *testing.T) {
 	// test for non-panic
-	isatty.IsWriterCygwinTerminal(os.Stdout)
+	t.Log("os.Stdout:", isatty.IsWriterCygwinTerminal(os.Stdout))
 }
