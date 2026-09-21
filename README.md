@@ -32,7 +32,7 @@ func main() {
 ## Installation
 
 ```
-$ go get github.com/mattn/go-isatty
+go get github.com/mattn/go-isatty
 ```
 
 ## License
